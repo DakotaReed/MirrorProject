@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Environment>
+
+    <!-- Timeout -->
+    <TimeOut>5</TimeOut>
+
+    <!-- Web -->
+    <PlatformName>web</PlatformName>
+    <BrowserName>chrome</BrowserName>
+    <Url>http://localhost:3000/</Url>
+    <ImageRepo>C:\Automation\GlobalProject_Selenium\ImageRepository\</ImageRepo>
+
+    <!-- Data Driven Testing -->
+    <DDTFile>./DDTFiles/users.csv</DDTFile>
+
+</Environment>
