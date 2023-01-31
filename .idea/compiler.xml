@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="GlobalProject_Selenium__Appium" />
         <module name="GlobalProject_Selenium" />
       </profile>
     </annotationProcessing>

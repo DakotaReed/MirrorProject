@@ -15,4 +15,8 @@ public class ManagePages extends Base{
         grafanaUsersPage = PageFactory.initElements(driver, UsersPage.class);
     }
 
+    public static void initMortgageCalc() {
+        mortgageCalculator = new pageObjects.mortgageCalc.MainPage(mobileDriver);
+    }
+
 }

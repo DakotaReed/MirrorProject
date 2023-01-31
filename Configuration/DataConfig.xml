@@ -5,13 +5,24 @@
     <!-- Timeout -->
     <TimeOut>5</TimeOut>
 
+    <!-- General -->
+    <PlatformName>mobile</PlatformName>  <!-- Android Pixel 6 -->
+
     <!-- Web -->
-    <PlatformName>web</PlatformName>
     <BrowserName>chrome</BrowserName>
     <Url>http://localhost:3000/</Url>
     <ImageRepo>C:\Automation\GlobalProject_Selenium\ImageRepository\</ImageRepo>
 
     <!-- Data Driven Testing -->
     <DDTFile>./DDTFiles/users.csv</DDTFile>
+
+    <!-- Mobile -->
+    <reportDirectory>C:\Automation\GlobalProject_Selenium\AppiumStudioReports\</reportDirectory>
+    <reportFormat>xml</reportFormat>
+    <testName>MortgageCalculator</testName>
+    <UDID>1A221FDF6003DK</UDID>
+    <APP_PACKAGE>com.shivgadhia.android.ukMortgageCalc</APP_PACKAGE>
+    <APP_ACTIVITY>.MainActivity</APP_ACTIVITY>
+    <localHost>http://127.0.0.1:4723/wd/hub</localHost>
 
 </Environment>

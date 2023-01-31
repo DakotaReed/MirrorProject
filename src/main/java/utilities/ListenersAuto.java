@@ -56,6 +56,9 @@ public  class ListenersAuto extends CommonOps implements ITestListener {
 
     @Attachment(value = "Page Screen-Shot", type = "image/png")
     public byte[] saveScreenshot() {
-        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+        if (!getData("PlatformName").equalsIgnoreCase("mobile"))
+            return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+        else
+            return ((TakesScreenshot)mobileDriver).getScreenshotAs(OutputType.BYTES);
     }
 }
