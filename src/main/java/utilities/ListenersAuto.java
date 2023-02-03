@@ -22,28 +22,32 @@ public  class ListenersAuto extends CommonOps implements ITestListener {
         System.out.println("------------------Starting Test: "+test.getName()+"------------------");
     }
 
-    public void onTestSuccess(ITestResult test){
-        System.out.println("------------------Test: "+test.getName()+" Passed------------------");
-        try {
-            MonteScreenRecorder.stopRecord();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public void onTestSuccess(ITestResult test) {
+        System.out.println("------------------Test: " + test.getName() + " Passed------------------");
+        if (!getData("PlatformName").equalsIgnoreCase("api")) {
+            try {
+                MonteScreenRecorder.stopRecord();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            File file = new File("./test-recordings/" + test.getName() + ".avi");
+            if (file.delete())
+                System.out.println("File deleted successfully");
+            else
+                System.out.println("Failed deleting file");
         }
-        File file = new File("./test-recordings/" + test.getName() + ".avi");
-        if (file.delete())
-            System.out.println("File deleted successfully");
-        else
-            System.out.println("Failed deleting file");
     }
 
-    public void onTestFailure(ITestResult test){
-        System.out.println("------------------Test: "+test.getName()+" Failed------------------");
-        try {
-            MonteScreenRecorder.stopRecord();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public void onTestFailure(ITestResult test) {
+        System.out.println("------------------Test: " + test.getName() + " Failed------------------");
+        if (!getData("PlatformName").equalsIgnoreCase("api")) {
+            try {
+                MonteScreenRecorder.stopRecord();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            saveScreenshot();
         }
-        saveScreenshot();
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult test) {

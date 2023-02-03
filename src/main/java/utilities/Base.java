@@ -2,6 +2,10 @@ package utilities;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,22 +17,27 @@ import pageObjects.mortgageCalc.MainPage;
 
 public class Base {
 
-    //    General
+    //----General----
     protected static WebDriverWait wait;
     protected static Actions actions;
     protected static SoftAssert softAssert;
     protected static Screen screen;
 
-    //    Web
+    //----Web----
     protected static WebDriver driver;
 
-    //    Mobile
+    //----Mobile----
     protected static AppiumDriver mobileDriver;
     protected static DesiredCapabilities dc;
     protected static TouchAction touchAction;
 
+    //----Rest API----
+    protected static RequestSpecification httpRequest;
+    protected static Response response;
+    protected static JsonPath jp;
+    protected static JSONObject params;
 
-    //    Page Objects - Web
+    //----Page Objects - Web----
     protected static pageObjects.grafana.LoginPage grafanaLogin;
     protected static pageObjects.grafana.MainPage grafanaMain;
     protected static LeftMenuPage grafanaLeftMenu;
@@ -37,7 +46,7 @@ public class Base {
     protected static AddNewUserPage grafanaAddNewUser;
     protected static UsersPage grafanaUsersPage;
 
-    //    Page Objects - Mobile
+    //----Page Objects - Mobile----
     protected static MainPage mortgageCalculator;
 
 }

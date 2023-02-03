@@ -6,12 +6,16 @@
     <TimeOut>5</TimeOut>
 
     <!-- General -->
-    <PlatformName>mobile</PlatformName>  <!-- Android Pixel 6 -->
+    <PlatformName>api</PlatformName>  <!-- Mobile Testing on Pixel 6 -->
+
+    <!-- Authorization -->
+    <UserName>admin</UserName>
+    <UserPass>admin</UserPass>
 
     <!-- Web -->
     <BrowserName>chrome</BrowserName>
     <Url>http://localhost:3000/</Url>
-    <ImageRepo>C:\Automation\GlobalProject_Selenium\ImageRepository\</ImageRepo>
+    <ImageRepo>E:\Automation\GlobalProject_Selenium\ImageRepository\</ImageRepo>
 
     <!-- Data Driven Testing -->
     <DDTFile>./DDTFiles/users.csv</DDTFile>
@@ -24,5 +28,8 @@
     <APP_PACKAGE>com.shivgadhia.android.ukMortgageCalc</APP_PACKAGE>
     <APP_ACTIVITY>.MainActivity</APP_ACTIVITY>
     <localHost>http://127.0.0.1:4723/wd/hub</localHost>
+
+    <!-- API -->
+    <UrlAPI>http://localhost:3000/</UrlAPI>
 
 </Environment>

@@ -15,14 +15,13 @@ public class GrafanaWeb extends CommonOps {
     @Test(description = "Test 01: Log In + Verify Header")
     @Description("Log In + Verify Header")
     public void test01_verifyHeader() {
-        WebFlows.login("admin", "admin");
+        WebFlows.login(getData("UserName"), getData("UserPass"));
         Verifications.verifyTextInElement(grafanaMain.headDashboard, "Welcome to Grafana");
     }
     @Test(description = "Test 02: Checking User/s in List")
     @Description("Checking User/s in List")
     public void test02_verifyDefaultUsers() {
         UIActions.mouseHover(grafanaLeftMenu.btn_server, grafanaServerAdminMenu.link_users);
-//        Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
         Verifications.numberOfElements(grafanaServerAdminMain.rows, 1);
     }
     @Test(description = "Test 03: Create New User")
